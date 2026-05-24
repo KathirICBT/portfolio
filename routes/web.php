@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\{
     AuthController, DashboardController, SliderController,
     ServiceController, NetworkProfileController, ClientController,
     TestimonialController, StatController, SectionController,
-    MediaController, SeoController, SettingController, GalleryController
+    MediaController, SeoController, SettingController, GalleryController,CategoryController,ProductController
 };
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +14,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/contact', [HomeController::class, 'contact'])->name('contact.submit');
 Route::get('/sitemap.xml', [HomeController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [HomeController::class, 'robots'])->name('robots');
+
+
+
+
 
 /* ── Admin Auth (guest) ───────────────────────────────────────────────── */
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -70,5 +74,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // Settings
         Route::get('settings', [SettingController::class, 'edit'])->name('settings.edit');
         Route::patch('settings', [SettingController::class, 'update'])->name('settings.update');
+
+        //Category
+        Route::resource('categories', CategoryController::class);
+        Route::resource('products', ProductController::class);
+        
+
+        
     });
 });
+
+Route::get('/products', [ProductController::class, 'viewproducts'])
+    ->name('products.view');
+
