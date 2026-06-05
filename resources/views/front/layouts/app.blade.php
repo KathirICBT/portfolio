@@ -28,8 +28,8 @@
     <meta property="og:title"       content="{{ $seo->og_title ?? $seo->meta_title ?? '' }}">
     <meta property="og:description" content="{{ $seo->og_description ?? $seo->meta_description ?? '' }}">
     <meta property="og:url"         content="{{ $seo->canonical_url ?? url('/') }}">
-    @if($seo->ogImage)
-    <meta property="og:image"       content="{{ $seo->ogImage->url }}">
+    @if(isset($seo) && $seo->ogImage)
+        <meta property="og:image" content="{{ $seo->ogImage->url }}">
     @endif
 
     {{-- Twitter Card --}}
@@ -882,8 +882,8 @@ textarea.form-control { resize:vertical; min-height:144px }
         <button class="mob-theme-btn" id="mobThemeBtn" onclick="toggleTheme()" aria-label="Toggle theme"></button>
     </div>
 
-    @foreach($sections->filter(fn($s)=>$s->nav_label && $s->is_visible) as $sec)
-    <a href="{{ $sec->anchor }}" onclick="closeMobileMenu()">{{ $sec->nav_label }}</a>
+    @foreach(($sections ?? collect())->filter(fn($s) => $s->nav_label && $s->is_visible) as $sec)
+        <a href="{{ $sec->anchor }}" onclick="closeMobileMenu()">{{ $sec->nav_label }}</a>
     @endforeach
     <a href="#contact" class="btn btn-primary mob-cta" onclick="closeMobileMenu()">
         {{ $gs['cta_button_label'] ?? 'Book Free Consultation' }}

@@ -500,7 +500,7 @@
                     </a>
                 </li>
                 <li class="menu-item active">
-                    <a href="{{ route('categories.index') }}">
+                    <a href="{{ route('admin.categories.index') }}">
                         <i data-lucide="folder-tree"></i>
                         <span>Categories</span>
                     </a>
@@ -585,7 +585,7 @@
         <!-- FORM WORKSPACE -->
         <main class="workspace">
             <!-- Back Navigation -->
-            <a href="{{ route('categories.index') }}" class="back-link">
+            <a href="{{ route('admin.categories.index') }}" class="back-link">
                 <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
                 <span>Back to List</span>
             </a>
@@ -593,7 +593,7 @@
             <div class="form-card">
                 <h2 class="form-title">Edit Category</h2>
                 <!-- Pre-populated dynamic form fields mapped to active Laravel model category -->
-                <form action="{{ route('categories.update', $category->id) }}" method="POST" id="editCategoryForm">
+                <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" id="editCategoryForm">
                     @csrf
                     @method('PUT')
                     <!-- Name Field -->
@@ -654,7 +654,7 @@
                     </div>
                     <!-- Actions -->
                     <div class="form-actions">
-                        <a href="{{ route('categories.index') }}" class="btn-cancel">Cancel</a>
+                        <a href="{{ route('admin.categories.index') }}" class="btn-cancel">Cancel</a>
                         <button type="submit" class="btn-gold">
                             <i data-lucide="save" style="width: 16px; height: 16px;"></i>
                             <span>Save Changes</span>

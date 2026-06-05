@@ -87,3 +87,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
 Route::get('/products', [ProductController::class, 'viewproducts'])
     ->name('products.view');
 
+// Route::get('/products', [ProductController::class, 'cartview'])
+//     ->name('cartview');

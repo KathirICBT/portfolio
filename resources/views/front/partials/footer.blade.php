@@ -4,8 +4,8 @@
             {{-- Brand --}}
             <div>
                 <div class="footer-brand-mark">
-                    <div class="footer-logo-mark" aria-hidden="true">SK</div>
-                    <span class="footer-brand-name">{{ $gs['site_name'] ?? 'Suresh Kumar' }}</span>
+                    <div class="footer-logo-mark" aria-hidden="true">Lee flora</div>
+                    <span class="footer-brand-name">{{ $gs['site_name'] ?? 'Dharsika' }}</span>
                 </div>
                 <p class="footer-tagline">{{ $gs['tagline'] ?? 'Strategic Business Advisor & Growth Consultant' }}. Empowering SMEs across the Greater Toronto Area.</p>
                 <div class="footer-socials">
@@ -26,8 +26,8 @@
             <div>
                 <p class="footer-heading">Quick Links</p>
                 <ul class="footer-nav" role="list">
-                    @foreach($sections->filter(fn($s)=>$s->nav_label && $s->is_visible) as $sec)
-                    <li><a href="{{ $sec->anchor }}">{{ $sec->nav_label }}</a></li>
+                    @foreach(($sections ?? collect())->filter(fn($s) => $s->nav_label && $s->is_visible) as $sec)
+                        <li><a href="{{ $sec->anchor }}">{{ $sec->nav_label }}</a></li>
                     @endforeach
                 </ul>
             </div>
@@ -51,7 +51,7 @@
                     @if(!empty($gs['contact_phone_cgta']))
                     <div class="footer-contact-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.66A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-                        <span>CGTA: {{ $gs['contact_phone_cgta'] }}</span>
+                        <span>{{ $gs['contact_phone_cgta'] }}</span>
                     </div>
                     @endif
                 </div>
@@ -59,7 +59,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p class="footer-copy">{{ $gs['footer_copyright'] ?? '© '.date('Y').' Suresh Kumar. All rights reserved.' }}</p>
+            <p class="footer-copy">{{ $gs['footer_copyright'] ?? '© '.date('Y').' Dharsika. All rights reserved.' }}</p>
             <div class="footer-legal">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Use</a>

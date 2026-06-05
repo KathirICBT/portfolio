@@ -546,9 +546,9 @@ tbody tr:hover td { background:var(--surface-alt) }
     <aside class="sidebar" id="adminSidebar" role="navigation" aria-label="Admin navigation">
         <div class="sidebar-brand">
             <a href="{{ route('admin.dashboard') }}" class="brand-logo" style="text-decoration:none">
-                <div class="brand-mark" aria-hidden="true">SK</div>
+                <div class="brand-mark" aria-hidden="true">L</div>
                 <div class="brand-text">
-                    <strong>{{ $gs['site_name'] ?? 'Suresh Kumar' }}</strong>
+                    <strong>{{ $gs['site_name'] ?? 'Dharsika' }}</strong>
                     <span>CMS Admin</span>
                 </div>
             </a>

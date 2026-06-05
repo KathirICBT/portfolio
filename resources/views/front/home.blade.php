@@ -166,13 +166,13 @@
                             <div class="play-circle" aria-hidden="true">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-left:3px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                             </div>
-                            <span>Watch Suresh's Story</span>
+                            <span>Watch Story</span>
                         </button>
                     </div>
                     @endif
                 </div>
                 <div class="about-accent-card" aria-label="22 plus years of strategic experience">
-                    <div class="accent-card-number">22<span style="color:var(--gold)">+</span></div>
+                    <div class="accent-card-number">2<span style="color:var(--gold)">+</span></div>
                     <div class="accent-card-label">Years of Strategic<br>Experience</div>
                 </div>
             </div>
